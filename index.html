@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Happy Valentines Babi</title>
+</head>
+<body>
+    <div class="container p-4 full-height d-flex justify-content-center align-items-center">
+        <div id="greetCard" class="row greet-card py-2 px-5 text-center mb-3">
+            <div class="col py-3 px-5">
+                <img src="assets/img/png/greet.png" class="w-75 py-3" alt="">
+                <h1 class="text-muted">HAPPY <span class="valen-word">VALENTINE'S DAY</span> BABY!</h1>
+                <small class="text-muted">Click <strong class="_here" onclick="revealMessage()">here</strong> to open the invitation.</small>
+            </div>
+        </div>
+        <div id="hiddenCard" class="row valentine-card text-center d-none">
+            <div class="col py-3"> 
+                <div class="d-none" id="yesORno">
+                    <img src="assets/gif/cling.gif" class="w-50 py-2" alt="">
+                    <h1 class="text-muted">Will you be my Valentine?</h1>
+                    <div>
+                        <button type="button" class="yes-button m-1" id="yesButton" onclick="agree()">
+                            YES
+                        </button>
+                        <button type="button" class="no-button m-1" id="noButton" onmouseover="switchText()" onmouseleave="returnState()" onclick="agree()">
+                            NO
+                        </button>
+                    </div>
+                    <div class="pt-3">
+                        <small class="text-muted">'Pag nag <strong>NO</strong> ka iiyak ako. <span class="d-none" id="hiddenNote"><strong>KUNG MAPIPINDOT MO 🫵🏻</strong></span></small>
+                    </div>
+                    <div class="pt-2">
+                    <hr>
+                     <small class="support-link d-none" id="delayedLink">
+                        Weird Buttons? Click <span type="button" data-toggle="modal" data-target="#myError"><strong> here </strong></span> to report.
+                     </small>
+                    </div>
+                </div>
+                <audio loop id="turnAround" src="assets/sounds/turnaround.mp3" preload="auto"></audio>
+                <audio loop id="blue" src="assets/sounds/blue.mp3" preload="auto"></audio>
+            </div>
+
+        </div>
+        <div class="row p-3 rad-5 d-none" id="mainGift">
+            <div class="col main-gift">
+                <div class="d-flex align-items-center justify-content-center pb-2 pt-5">
+                    <img src="assets/gif/flowers.gif" alt="" class="img-fluid">
+                </div>
+                <div class="text-center">
+                    <p class="py-4 px-5">Before anything else, flowers for you mahal ko I love youuu
+                    </p>
+                    <small class="text-muted">Click the  
+                        <span type="button" data-toggle="modal" data-target="#myGift" class="flower-link">🌷</span> to open my message for you.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myGift">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row valen-message pb-5 m-1">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img src="assets/gif/kiss.gif" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-12">
+                            <h1>HAPPY VALENTINES BABY!</h1>
+                            <div class="message">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 💝</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="bubble-message">
+                                        <p>Hello babi ko sana magustuhan mo tong simple gift ko for you hehe. Sorry lablab kung natagalan ako tanungin ka na valentine ko kasi i want it to make it special throught this simple gift na ginawa ko for you babi
+                                            muntik mo na ako awayin kasi baka akala mo ayaw kita maging valentine HAHAHAH anyways babi sana nagustuhan 
+                                            mo tong ginawa ko for youuu, I love you soo muchhh mwamwamwaaaa sana next valentines natin magkasama na tayo
+                                            magkasama na tayo magcelebrate mahal ko. Mahal na mahal kita and i wish that you'll always be my valentine mahal ko
+                                            asawa ko na ikaw babi mwamwamwaaa I love you soo muchhh mahal ko 💝
+                                        </p>
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message my-4">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 💝</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="bubble-message">
+                                        <p>Kalma ako lang din to HAHHAH gumawa ng sariling chat box eh, pero bebe sana malaman mo how pretty you are
+                                           and baliw na baliw ako sayooo, lahat ng pictures mo super pretty! pero here are my favorites babi ko 
+                                        </p>
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message my-4">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 😍</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="img m-2 p-2 border bg-light">
+                                        <div class="">
+                                            <img src="assets/img/you/img_2.jpeg" alt="" class="img-fluid mb-5">
+                                        </div>
+                                    </div>
+                                    <div class="bubble-message">
+                                        <p>Kung tama pag kakaalala ko eto yung pfp mo nung chinat kita sa ml ng "drop ig" so pretty ng baby kooo na yan buti nalang talaga sabay tayo online nung gabing yon
+                                        , di ko akalain na magiging girlfriend kita jusqq so pretty mo mahal 🥺
+                                        </p> 
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message my-4">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 😆</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="img m-2 p-2 border bg-light">
+                                        <div class="">
+                                            <img src="assets/img/you/img_4.jpg" alt="" class="img-fluid mb-5">
+                                        </div>
+                                    </div>
+                                    <div class="bubble-message">
+                                        <p>Guard may bastos HAHAAHH jk beh bat naman kasi sinendan mo ako niyan HAHAHAH anyways ganda ganda mo talaga babi
+                                            I love how i fell for youu kase ngayon mahal na mahal na kitaaaa
+                                        </p> 
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message my-4">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 🥺</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="img m-2 p-2 border bg-light">
+                                        <div class="">
+                                            <img src="assets/img/you/img_1.jpeg" alt="" class="img-fluid mb-5">
+                                        </div>
+                                    </div>
+                                    <div class="bubble-message">
+                                        <p>Eto talaga yung favorite ko nung sinend mo yan jusq nabaliw ako sayo agad ganda ganda ng smile ng baby kooo tagal ko 
+                                            tiningnan yan kase crush na crush kita babi koooo 😌 mwamwamwaaaaaa
+                                        </p> 
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message my-4">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with ✨</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="img m-2 p-2 border bg-light">
+                                        <div class="">
+                                            <img src="assets/img/you/img_7.jpeg" alt="" class="img-fluid mb-5">
+                                        </div>
+                                    </div>
+                                    <div class="bubble-message">
+                                        <p>Oh pak may sarili akong model ganda ganda moo mahal kooo. Sakin ka na lang babi ko please 🥺 I love youuuu
+                                        mamamatay ako pag di mo na ako lablab
+                                        </p> 
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message my-4">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 🥺</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="img m-2 p-2 border bg-light">
+                                        <div class="">
+                                            <img src="assets/img/you/img_5.jpeg" alt="" class="img-fluid mb-5">
+                                        </div>
+                                    </div>
+                                    <div class="bubble-message">
+                                        <p>Hay super pretty naman ng ka-date ko na yan 🥺 wag mo kong tingnan nga ganyan baka maunli cuddle ka sakin maya kita mo HAHAHAH 
+                                            mwamwamwaaaaa 
+                                        </p> 
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message my-4">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 😈</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="img m-2 p-2 border bg-light">
+                                        <div class="">
+                                            <img src="assets/img/you/img_6.jpeg" alt="" class="img-fluid mb-5">
+                                        </div>
+                                    </div>
+                                    <div class="bubble-message">
+                                        <p>Di ko alam pero may nafifeel ako sa picture mo na yan like sobrang nakakabaliw na gustong gusto kita ikiss ng madami babi kakagigil sarap mo 😌😚
+
+                                        </p> 
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message">
+                                <div class="px-3">
+                                    <small class="text-muted">Sent with 💝</small>
+                                </div>
+                                <div class="message-container pb-4">
+                                    <div class="bubble-message">
+                                        <p>Eto na last message ko mahal, sana nagustuhan mo kahit marami kang binasa HAHAAH I love youu soo much 
+                                            mahal koo happy Valentines baby mwamwaaamwaaaaaa 💝
+                                        </p>
+                                        <div class="sender-avatar">
+                                            <img src="assets/img/icon/prof.jpg" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myError">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="row error-message m-1">
+                    <div class="col-12 text-center">
+                        <h1>ERROR 404?!</h1>
+                        <div class="col d-flex align-items-center justify-content-center">
+                            <img src="assets/gif/error.gif"  alt="" class="w-75">
+                        </div>
+                        <div class="error-info p-3 text-muted my-3">
+                            <p>There's <strong>NO ERROR</strong> found </p>
+                            <p>Just say <strong>YES</strong> and be my valentine</p>
+                        </div>
+                        <span type="button" class="return-link" data-dismiss="modal">Okay</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="js/script.js"></script>
+</html>
